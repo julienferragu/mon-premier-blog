@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Change Mountaineer Activity{% endblock %}
+
+{% block content %}
+    <h1>Change Mountaineer Activity</h1>
+
+    <div class="activity-card">
+        <h3>{{ mountaineer.id_mountaineer }}</h3>
+        <p><strong>Nationality:</strong> {{ mountaineer.nationality }}</p>
+        <p><strong>Current Activity:</strong> {{ mountaineer.activity }}</p>
+        <p><strong>State:</strong> {{ mountaineer.state }}</p>
+        <p><strong>Oxygen:</strong> {{ mountaineer.oxygen }}</p>
+        
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}

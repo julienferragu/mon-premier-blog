@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Mountaineers{% endblock %}
+
+{% block content %}
+    <h1>Mountaineers</h1>
+
+    {% for mountaineer in mountaineers %}
+        <div class="mountaineer-card">
+            
+            <img src="{{ mountaineer.photo }}" alt="{{ mountaineer.nationality }}" class="mountaineer-image">
+            <h3>Name: <a href="{% url 'change_mountaineer_activity' mountaineer.id_mountaineer %}">{{ mountaineer.id_mountaineer }}</a></h3>
+            <p><strong>Nationality:</strong> {{ mountaineer.nationality }}</p>
+            <p><strong>Activity:</strong> {{ mountaineer.activity }}</p>
+            <p><strong>State:</strong> {{ mountaineer.state }}</p>
+            <p><strong>Oxygen:</strong> {{ mountaineer.oxygen }}</p>
+        </div>
+    {% endfor %}
+
+    {% for activity in activities %}
+        <div class="activity-card">
+            <p><strong>Activity:</strong> {{ activity.id_activity }}</p>
+            <p><strong>Availability:</strong> {{ activity.availability }}</p>
+            <p><strong>Category:</strong> {{ activity.category }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
