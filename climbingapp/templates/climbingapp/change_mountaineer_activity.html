@@ -11,14 +11,6 @@
         <p><strong>Current Activity:</strong> {{ mountaineer.activity }}</p>
         <p><strong>State:</strong> {{ mountaineer.state }}</p>
         <p><strong>Oxygen:</strong> {{ mountaineer.oxygen }}</p>
-        
-        {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-        {% endif %}
 
         <form method="post" action="">
             {% csrf_token %}
