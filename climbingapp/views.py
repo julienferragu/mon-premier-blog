@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MountaineerActivityForm
 from django.db import transaction
 from .models import Activity, Mountaineer
-from django.contrib import messages
 from django.http import HttpResponseBadRequest
 
 
